@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ms-discovery
+
+---
+spring:
+  profiles: discovery1                                 # 指定profile=discovery1
+server: 
+  port: 1001                                                       # 端口号
+eureka:
+  instance:
+    hostname: localhost                               # 指定当profile=discovery1时，主机名
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1002/eureka/      # 将自己注册到discovery2这个Eureka上面去
+
+---
+spring:
+  profiles: discovery2
+server:
+  port: 1002
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
