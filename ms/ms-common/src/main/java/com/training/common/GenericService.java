@@ -1,7 +1,5 @@
 package com.training.common;
 
-import java.util.List;
-
 /**
  * 所有自定义Service的顶级接口,封装常用的增删查改操作
  * <p/>
@@ -39,21 +37,4 @@ public interface GenericService<Model, PK> {
      * @return model 对象
      */
     Model selectById(PK id);
-
-
-    /**
-     * 查询单个对象
-     *
-     * @return 对象
-     */
-    Model selectOne();
-
-
-    /**
-     * 查询多个对象
-     *
-     * @return 对象集合
-     */
-    List<Model> selectList();
-
 }

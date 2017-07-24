@@ -1,7 +1,5 @@
 package com.training.common;
 
-import java.util.List;
-
 /**
  * GenericService的实现类, 其他的自定义 ServiceImpl, 继承自它,可以获得常用的增删查改操作,
  * 未实现的方法有 子类各自实现
@@ -54,16 +52,5 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
      */
     public Model selectById(PK id) {
         return getDao().selectByPrimaryKey(id);
-    }
-
-
-    @Override
-    public Model selectOne() {
-        return null;
-    }
-
-    @Override
-    public List<Model> selectList() {
-        return null;
     }
 }
